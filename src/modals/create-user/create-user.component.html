@@ -1,0 +1,30 @@
+<div class="m-3">
+  <form [formGroup]="createUserForm" (ngSubmit)="createUser(createUserForm)">
+    <div class="form-group">
+      <label for="firstName" class="form-label">{{'labels.first_name' | translate}}</label>
+      <input type="text" class="form-control" formControlName="first_name">
+      <div class="mt-2" *ngFor="let error of getErrorsField('first_name')">
+        <span class="text-danger">{{'formErrors.' + error | translate}}</span>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="lastName" class="form-label">{{'labels.last_name' | translate}}</label>
+      <input type="text" class="form-control" formControlName="last_name">
+      <div class="mt-2" *ngFor="let error of getErrorsField('last_name')">
+        <span class="text-danger">{{'formErrors.' + error | translate}}</span>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="iban" class="form-label">{{'labels.bankAccountIban' | translate}}</label>
+      <input type="text" class="form-control" formControlName="iban" minlength="10">
+      <div class="mt-2" *ngFor="let error of getErrorsField('iban')">
+        <span class="text-danger">{{'formErrors.' + error | translate}}</span>
+      </div>
+    </div>
+
+    <div class="d-flex justify-content-between">
+      <button type="submit" class="btn btn-success" [disabled]="!createUserForm.valid">{{'labels.submit' | translate}}</button>
+      <button class="btn btn-danger" (click)="close()">{{'labels.cancel' | translate}}</button>
+    </div>
+  </form>
+</div>

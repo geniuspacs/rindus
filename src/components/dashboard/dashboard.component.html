@@ -1,0 +1,37 @@
+<div class="navbar navbar-expand-lg justify-content-between text-light bg-secondary">
+  <label class="label mx-2">{{whoami.name}}</label>
+  <button class="btn btn-danger mx-2" (click)="logout()">{{'labels.logout' | translate}}</button>
+</div>
+
+<div class="container mt-3">
+  <table class="table" *ngIf="users && users.length > 0">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">{{'labels.first_name' | translate}}</th>
+        <th scope="col">{{'labels.last_name' | translate}}</th>
+        <th scope="col">{{'labels.bankAccountIban' | translate}}</th>
+        <th scope="col">{{'labels.actions' | translate}}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <th scope="row">{{user.id}}</th>
+        <td>{{user.first_name}}</td>
+        <td>{{user.last_name}}</td>
+        <td>{{user.iban}}</td>
+        <td>
+          <button class="btn btn-success mx-2" (click)="openModalUser(user)" [disabled]="!user.own" [ngbTooltip]="!user.own ? ('labels.notYourUser' | translate) : ''">{{'labels.edit' | translate}}</button>
+          <button class="btn btn-danger mx-2" (click)="removeItem(user)" [disabled]="!user.own" [ngbTooltip]="!user.own ? ('labels.notYourUser' | translate) : ''">{{'labels.remove' | translate}}</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="d-flex flex-column align-items-center">
+    <h3 *ngIf="!users || users.length <= 0">{{'labels.noUsersFound' | translate}}</h3>
+    <button class="btn btn-success" (click)="openModalUser()">{{'labels.newUser' | translate}}</button>
+  </div>
+  
+  
+</div>

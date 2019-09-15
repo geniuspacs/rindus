@@ -1,0 +1,112 @@
+//
+// Color system
+//
+
+$white:    #fff;
+$gray-100: #F7F9FA;
+$gray-200: #E7E6E6;
+$gray-300: #D8D8D8;
+$gray-400: #ced4da;
+$gray-500: #adb5bd;
+$gray-600: #6c757d;
+$gray-700: #495057;
+$gray-800: #3D3D3D;
+$gray-900: #212529;
+$black:    #000;
+
+$blue:    #002A7B;
+$indigo:  #6610f2;
+$purple:  #6f42c1;
+$pink:    #C6006E;
+$red:     #dc3545;
+$orange:  #fd7e14;
+$yellow:  #ffc107;
+$green:   #28a745;
+$teal:    #20c997;
+$cyan:    #17a2b8;
+
+$primary:       $blue;
+$secondary:     $gray-600;
+$tertiary:      $pink;
+$success:       $green;
+$info:          $cyan;
+$warning:       $yellow;
+$danger:        $red;
+$light:         $gray-200;
+$dark:          $gray-800;
+
+$theme-colors: ();
+// stylelint-disable-next-line scss/dollar-variable-default
+$theme-colors: map-merge(
+  (
+    "primary":    $primary,
+    "secondary":  $secondary,
+    "tertiary":   $tertiary,
+    "success":    $success,
+    "info":       $info,
+    "warning":    $warning,
+    "danger":     $danger,
+    "light":      $light,
+    "dark":       $dark
+  ),
+  $theme-colors
+);
+
+// Body
+//
+// Settings for the `<body>` element.
+
+$body-bg:                   $gray-100;
+$body-color:                $gray-800;
+
+
+// Links
+//
+// Style anchor elements.
+
+$link-color:                $tertiary;
+$link-hover-color:          darken($link-color, 15%);
+
+// Grid containers
+//
+// Define the maximum width of `.container` for different screen sizes.
+
+$container-max-widths: (
+  sm: 760px,
+  md: 980px,
+  lg: 1184px,
+  xl: 1600px
+);
+
+// Components
+//
+// Define common padding and border radius sizes and more.
+
+$border-radius:               .15rem;
+$border-radius-lg:            .2rem;
+$border-radius-sm:            .1rem;
+
+// Fonts
+//
+// Font, line-height, and color for body text, headings, and more.
+
+// stylelint-disable value-keyword-case
+$font-family-sans-serif:      'Lato', Arial, sans-serif;
+$font-family-base:            $font-family-sans-serif;
+
+$font-weight-bolder:          900;
+
+$headings-font-weight:        700;
+
+// Own vars
+$login-bg: $primary;
+
+$navbar-top-height: 4rem;
+$navbar-link-color: $gray-200;
+$navbar-link-color-active: $white;
+
+$sidebar-width: 12rem;
+
+$dashboard-card-min-height: 150px;
+
+$form-check-fa-gutter: 1.5em;

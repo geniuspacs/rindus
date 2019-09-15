@@ -1,0 +1,23 @@
+{
+    "labels": {
+        "welcome": "Welcome to Rindus",
+        "loginWithGoogle": "Login with Google",
+        "logout": "Logout",
+        "first_name": "First Name",
+        "last_name": "Last Name",
+        "bankAccountIban": "Bank Account (IBAN)",
+        "actions": "Actions",
+        "edit": "Edit",
+        "remove": "Remove",
+        "notYourUser": "This is not your user",
+        "noUsersFound": "No users found",
+        "newUser": "New user",
+        "submit": "Submit",
+        "cancel": "Cancel"
+    },
+    "formErrors": {
+        "required": "This field is required",
+        "minlength": "Lenght incorrect",
+        "pattern": "Characters incorrect. Please review data"
+    }
+}
