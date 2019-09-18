@@ -1,27 +1,17 @@
 # Frontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.3.
+This project was developed by Eugenio Páez Casado.
 
-## Development server
+## Previous considerations before frontend deployment
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Please follow the README.md file in the project root directory to up backend docker
 
-## Code scaffolding
+## Run dockerized frontend
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Go to frontend directory and run these commands
 
-## Build
+docker build -t frontend:v1 .
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+docker run -d -v ${PWD}:/app -v /app/node_modules -p 4200:4200 --rm frontend:v1
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Go to browser and open http://localhost:4200
